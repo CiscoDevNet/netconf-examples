@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<nf:rpc xmlns:nf="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns="http://www.cisco.com/nxos:7.0.3.I2.1.:vlan_mgr_cli" message-id="1">
+  <nf:get>
+    <nf:filter type="subtree">
+      <show>
+        <vlan/>
+      </show>
+    </nf:filter>
+  </nf:get>
+</nf:rpc>
+]]>]]>

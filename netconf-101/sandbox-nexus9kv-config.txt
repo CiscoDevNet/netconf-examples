@@ -1,0 +1,78 @@
+!Command: show running-config
+!Time: Tue Feb  2 17:17:16 2016
+
+version 7.0(3)I2(1)
+hostname n9kvswitchfcs
+vdc n9kvswitchfcs id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+feature telnet
+feature bash-shell
+feature tacacs+
+feature interface-vlan
+
+no password strength-check
+username admin password 5 $5$fiej6ToS$O0JczaqOicFm3A.QMegYAmgJoDRV6rADRXDsGQvJbA7  role network-admin
+ip domain-lookup
+ip domain-name cisco.com
+ip host toolserver-devnet.insieme.local 172.31.219.60
+tacacs-server key 7 "wawy123"
+ip tacacs source-interface Ethernet1/3
+tacacs-server timeout 10
+tacacs-server deadtime 20
+copp profile strict
+snmp-server user admin auth md5 0x0ed227360bf8d651be8d7ee949595ee5 priv 0x0ed227360bf8d651be8d7ee949595ee5 localizedkey engineID 128:0:0:9:3:0:80:86:137:173:111
+rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+ntp server 10.81.254.202 use-vrf management
+tacacs-server directed-request
+
+vlan 1
+
+vrf context management
+  ip domain-name abc.inc
+  ip name-server 171.70.168.183 10.10.10.1 4.2.2.3 8.8.4.4
+  ip route 0.0.0.0/0 10.10.10.254
+
+interface Vlan1
+
+interface Vlan22
+  no autostate
+  management
+
+interface Ethernet1/1
+  description managed by puppet
+  no switchport
+  ip address 1.1.43.43/24
+
+interface Ethernet1/2
+
+interface Ethernet1/3
+
+interface Ethernet1/4
+
+interface Ethernet1/5
+
+interface Ethernet1/6
+
+interface Ethernet1/7
+
+interface Ethernet1/8
+
+interface Ethernet1/9
+
+interface mgmt0
+  vrf member management
+  ip address 10.10.10.51/24
+line console
+line vty
+boot nxos bootflash:/nxos.7.0.3.I2.1.bin
