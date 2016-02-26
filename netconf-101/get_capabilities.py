@@ -4,10 +4,6 @@ import logging
 from ncclient import manager
 import sys
 
-rootLogger = logging.getLogger('ncclient.transport.session')
-rootLogger.setLevel(logging.DEBUG)
-handler = logging.StreamHandler()
-rootLogger.addHandler(handler)
 
 # the variables below assume the user is requesting access to a
 # Nexus device running in VIRL in the  DevNet Always On Sandbox
