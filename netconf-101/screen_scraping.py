@@ -7,7 +7,7 @@ import sys
 def main():
     """
     Open a file called sandbox-nexus9kv-config.txt.
-    Print each line that matches a regular expression for a static route.
+    Print each line that matches a regular expression for a hostname route.
     """
     HOSTNAME = ''
     NXOS_HOSTNAME_REGEX = '^hostname (.*)$'
