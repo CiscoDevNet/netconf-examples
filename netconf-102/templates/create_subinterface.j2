@@ -1,0 +1,22 @@
+<config>
+   <native xmlns="urn:ios">
+      <interface>
+         <{{ base }}>
+            <name>{{ interface_id }}.{{ vlan_id }}</name>
+            <encapsulation>
+               <dot1Q>
+                  <vlan-id>{{ vlan_id }}</vlan-id>
+               </dot1Q>
+            </encapsulation>
+            <ip>
+               <address>
+                  <primary>
+                     <address>{{ ip }}</address>
+                     <mask>{{ subnet_mask }}</mask>
+                  </primary>
+               </address>
+            </ip>
+         </{{ base }}>
+      </interface>
+   </native>
+</config>

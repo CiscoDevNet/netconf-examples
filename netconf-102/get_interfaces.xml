@@ -1,0 +1,5 @@
+<filter>
+  <native xmlns="urn:ios">
+    <interface></interface>
+  </native>
+</filter>
