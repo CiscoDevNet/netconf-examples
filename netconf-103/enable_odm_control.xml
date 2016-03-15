@@ -1,0 +1,5 @@
+<config>
+  <cisco-ia xmlns="http://cisco.com/yang/cisco-ia">
+    <odm-control>true</odm-control>
+  </cisco-ia>
+</config>

@@ -1,0 +1,5 @@
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       172.16.126.251  YES manual up                    up      
+GigabitEthernet2       unassigned      YES unset  administratively down down    
+GigabitEthernet3       unassigned      YES manual administratively down down    
+VirtualPortGroup0      172.16.126.251  YES unset  up                    up   
