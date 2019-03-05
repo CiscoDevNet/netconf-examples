@@ -20,6 +20,7 @@ For DevNet Express events, use these three Issue tracker repos based on the cont
 * https://github.com/CiscoDevNet/devnet-express-dna-issues
 * https://github.com/CiscoDevNet/devnet-express-cc-issues
 * https://github.com/CiscoDevNet/devnet-express-dci-issues
+* https://github.com/CiscoDevNet/devnet-express-security-issues
 
 Use the issue tracker to suggest additions, report bugs, and ask questions.
 This is also a great way to connect with the developers of the project as well
